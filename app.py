@@ -12,7 +12,8 @@ from linebot.models import (
 
 app = Flask(__name__)
 
-line_bot_api = LineBotApi('XSRSmF15EgVs3EQhvKeKwC36H7jJpdUTWcpCTgqt/wn/jljFmTn6u3LIINBfnRThptrVMjGFyeV8RCrIf9mb3rOw761xhL4+9Eiw0nQikTcS53ryswi2K5JmPyzpstxyxbIH3mChP+qeeVnj0S21vgdB04t89/1O/w1cDnyilFU=')
+line_bot_api = LineBotApi(
+    'XSRSmF15EgVs3EQhvKeKwC36H7jJpdUTWcpCTgqt/wn/jljFmTn6u3LIINBfnRThptrVMjGFyeV8RCrIf9mb3rOw761xhL4+9Eiw0nQikTcS53ryswi2K5JmPyzpstxyxbIH3mChP+qeeVnj0S21vgdB04t89/1O/w1cDnyilFU=')
 handler = WebhookHandler('b42245e3f425856029f1989773f789be')
 
 
@@ -51,7 +52,12 @@ def handle_message(event):
 
     line_bot_api.reply_message(
         event.reply_token,
-        TextSendMessage(text=r))
+        # TextSendMessage(text=r)
+        StickerSendMessage(
+            package_id='1',
+            sticker_id='1'
+        )
+    )
 
 
 if __name__ == "__main__":
