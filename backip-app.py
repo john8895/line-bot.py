@@ -41,44 +41,40 @@ def callback():
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     msg = event.message.text
-    reply_text = '我看不懂你說什麼'
+    r = '我看不懂你說什麼'
 
     # 1. 如果使用者訊息含有「吃什麼」，就進入「選擇店家」函式
     # 1. 讀取店家資料庫store_data
     # 1. 產生一個從0到資料庫長度的隨機數
     # 1. 將符合的店家名字印出
 
-    store_data = ['龍品魚丸', '原食', '濰克']
 
-    num = random.randint(0, len(store_data) - 1)
-
-    if '吃什麼' in msg:
-        reply_text = '吃', store_data[num], '好了'
+    if
 
 
-    # if '貼圖' in msg:
-    #     sticker_message = StickerSendMessage(
-    #         package_id='1',
-    #         sticker_id='3'
-    #     )
-    #
-    #     line_bot_api.reply_message(
-    #         event.reply_token,
-    #         sticker_message)
-    #     return
+    if '貼圖' in msg:
+        sticker_message = StickerSendMessage(
+            package_id='1',
+            sticker_id='3'
+        )
+
+        line_bot_api.reply_message(
+            event.reply_token,
+            sticker_message)
+        return
 
     if msg in ['hi', 'Hi']:
-        reply_text = 'hi'
+        r = 'hi'
     elif msg == '你吃飯了嗎？':
-        reply_text = '還沒'
+        r = '還沒'
     elif msg == '你是誰':
-        reply_text = '我是機器人'
+        r = '我是機器人'
     elif '訂位' in msg:
-        reply_text = '你想訂位，是嗎？'
+        r = '你想訂位，是嗎？'
 
     line_bot_api.reply_message(
         event.reply_token,
-        TextSendMessage(text=reply_text),
+        TextSendMessage(text=r),
     )
 
 
