@@ -54,8 +54,8 @@ def handle_message(event):
         event.reply_token,
         # TextSendMessage(text=r)
         StickerSendMessage(
-            package_id='1',
-            sticker_id='1'
+            package_id='632',
+            sticker_id='4'
         )
     )
 
