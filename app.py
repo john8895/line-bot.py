@@ -52,10 +52,10 @@ def handle_message(event):
 
     line_bot_api.reply_message(
         event.reply_token,
-        # TextSendMessage(text=r)
+        TextSendMessage(text=r),
         StickerSendMessage(
-            package_id='632',
-            sticker_id='4'
+            package_id='4',
+            sticker_id='632'
         )
     )
 
